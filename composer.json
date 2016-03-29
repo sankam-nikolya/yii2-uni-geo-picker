@@ -1,0 +1,35 @@
+{
+  "name": "jakeroid/yii2-uni-geo-picker",
+  "description": "Widget for getting coordinates of point on the map (google, yandex) selected by user.",
+  "keywords": [
+    "yii2",
+    "geo",
+    "map",
+    "picker",
+    "point",
+    "input"
+  ],
+  "homepage": "https://github.com/Jakeroid/yii2-uni-geo-picker",
+  "type": "yii2-widget",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/Jakeroid/yii2-uni-geo-picker/issues",
+    "source": "https://github.com/Jakeroid/yii2-uni-geo-picker"
+  },
+  "authors": [
+    {
+      "name": "Ivan Karabadzhak",
+      "email": "iam@jakeroid.com",
+      "homepage": "http://jakeroid.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "jakeroid\\unigeopicker\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": "^2.0.0"
+  }
+}
