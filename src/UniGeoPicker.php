@@ -14,13 +14,15 @@ use yii\base\Widget;
 
 class UniGeoPicker extends Widget
 {
-    public $form;
+    public $model;
     public $attribute;
+    public $zoom_level;
+    public $default_center_coordinates;
 
     public function init()
     {
-        if (!$this->form && !$this->attribute) {
-            throw new ErrorException(Yii::t('uni-geo-picker', 'Form and attribute did not set.'));
+        if (!$this->model && !$this->attribute) {
+            throw new ErrorException(Yii::t('uni-geo-picker', 'Model and attribute did not set.'));
         }
         parent::init();
     }
@@ -28,8 +30,10 @@ class UniGeoPicker extends Widget
     public function run()
     {
         return $this->render('uni-geo-picker', [
-            'form' => $this->form,
+            'model' => $this->model,
             'attribute' => $this->attribute,
+            'zoom_level' => $this->zoom_level,
+            'default_center_coordinates' => $this->default_center_coordinates,
         ]);
     }
 }
