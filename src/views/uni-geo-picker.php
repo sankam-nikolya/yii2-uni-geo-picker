@@ -16,6 +16,7 @@ use yii\helpers\Html;
 /* @var $zoom_level string */
 /* @var $default_center_coordinates [] */
 /* @var $button_label */
+/* @var $map_height */
 
 
 UniGeoPickerAsset::register($this);
@@ -28,11 +29,11 @@ UniGeoPickerAsset::register($this);
     data-default-center-coordinates="<?= $default_center_coordinates ?>"
 >
     <div class="panel-heading">
-        <button type="button" class="btn btn-default no-focus spoiler-trigger" data-toggle="collapse"><?= $button_label ?></button>
+        <button type="button" class="btn-sm btn-default no-focus spoiler-trigger" data-toggle="collapse"><?= $button_label ?></button>
     </div>
     <div class="panel-collapse collapse out">
         <div class="panel-body">
-            <div id="uni-geo-picker-map">
+            <div id="uni-geo-picker-map" style="height: <?= $map_height ?>px;">
                 
             </div>
         </div>

@@ -19,6 +19,7 @@ class UniGeoPicker extends Widget
     public $zoom_level;
     public $default_center_coordinates;
     public $button_label;
+    public $map_height;
 
     public function init()
     {
@@ -28,6 +29,10 @@ class UniGeoPicker extends Widget
         
         if (!$this->button_label) {
             $this->button_label = Yii::t('uni-geo-picker', 'Uni Geo Picker');
+        }
+        
+        if (!$this->map_height) {
+            $this->map_height = 500;
         }
         
         parent::init();
@@ -41,6 +46,7 @@ class UniGeoPicker extends Widget
             'zoom_level' => $this->zoom_level,
             'default_center_coordinates' => $this->default_center_coordinates,
             'button_label' => $this->button_label,
+            'map_height' => $this->map_height,
         ]);
     }
 }
