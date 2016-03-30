@@ -28,7 +28,7 @@ UniGeoPickerAsset::register($this);
     data-default-center-coordinates="<?= $default_center_coordinates ?>"
 >
     <div class="panel-heading">
-        <button type="button" class="btn btn-default no-focus spoiler-trigger" data-toggle="collapse"><?= %$button_label ?></button>
+        <button type="button" class="btn btn-default no-focus spoiler-trigger" data-toggle="collapse"><?= $button_label ?></button>
     </div>
     <div class="panel-collapse collapse out">
         <div class="panel-body">
