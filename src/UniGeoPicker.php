@@ -18,12 +18,18 @@ class UniGeoPicker extends Widget
     public $attribute;
     public $zoom_level;
     public $default_center_coordinates;
+    public $button_label;
 
     public function init()
     {
         if (!$this->model && !$this->attribute) {
             throw new ErrorException(Yii::t('uni-geo-picker', 'Model and attribute did not set.'));
         }
+        
+        if (!$this->button_label) {
+            $this->button_label = Yii::t('uni-geo-picker', 'Uni Geo Picker');
+        }
+        
         parent::init();
     }
 
@@ -34,6 +40,7 @@ class UniGeoPicker extends Widget
             'attribute' => $this->attribute,
             'zoom_level' => $this->zoom_level,
             'default_center_coordinates' => $this->default_center_coordinates,
+            'button_label' => $this->button_label,
         ]);
     }
 }

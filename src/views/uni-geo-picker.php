@@ -13,8 +13,10 @@ use yii\helpers\Html;
 /* @var $form \yii\widgets\ActiveForm */
 /* @var $model \yii\base\Model */
 /* @var $attribute string */
-/* @var $default_center_coordinates [] */
 /* @var $zoom_level string */
+/* @var $default_center_coordinates [] */
+/* @var $button_label */
+
 
 UniGeoPickerAsset::register($this);
 ?>
@@ -26,7 +28,7 @@ UniGeoPickerAsset::register($this);
     data-default-center-coordinates="<?= $default_center_coordinates ?>"
 >
     <div class="panel-heading">
-        <button type="button" class="btn btn-default no-focus spoiler-trigger" data-toggle="collapse"><?= Yii::t('app', 'Geo Picker') ?></button>
+        <button type="button" class="btn btn-default no-focus spoiler-trigger" data-toggle="collapse"><?= %$button_label ?></button>
     </div>
     <div class="panel-collapse collapse out">
         <div class="panel-body">
