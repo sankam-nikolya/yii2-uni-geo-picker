@@ -24,11 +24,11 @@ class UniGeoPicker extends Widget
     public function init()
     {
         if (!$this->model && !$this->attribute) {
-            throw new ErrorException(Yii::t('uni-geo-picker', 'Model and attribute did not set.'));
+            throw new ErrorException(Yii::t('uni-geo-picker', 'MODEL_AND_ATTRIBUTE_DID_NOT_SET'));
         }
         
         if (!$this->button_label) {
-            $this->button_label = Yii::t('uni-geo-picker', 'Uni Geo Picker');
+            $this->button_label = Yii::t('uni-geo-picker', 'UNI_GEO_PICKER');
         }
         
         if (!$this->map_height) {
