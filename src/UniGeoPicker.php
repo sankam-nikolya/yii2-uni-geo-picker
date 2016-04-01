@@ -23,6 +23,14 @@ class UniGeoPicker extends Widget
 
     public function init()
     {
+        $i18n = [
+            'class' => 'yii\i18n\PhpMessageSource',
+            'basePath' => __DIR__ . DIRECTORY_SEPARATOR . '/messages',
+            'forceTranslation' => true,
+        ];
+
+        Yii::$app->i18n->translations['uni-geo-picker'] = $i18n;
+
         if (!$this->model && !$this->attribute) {
             throw new ErrorException(Yii::t('uni-geo-picker', 'MODEL_AND_ATTRIBUTE_DID_NOT_SET'));
         }
