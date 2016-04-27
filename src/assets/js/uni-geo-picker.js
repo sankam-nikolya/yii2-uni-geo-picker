@@ -2,8 +2,8 @@
  * Created by Jakeroid on 16-Mar-16.
  */
 
-$(document).ready(function() {
-    var uniGeoPickerBlock = $('#uni-geo-picker-widget');
+function uniGeoPickerAttachEvents(selector) {
+    var uniGeoPickerBlock = $(selector);
 
     if (uniGeoPickerBlock.length > 0) {
 
@@ -15,7 +15,7 @@ $(document).ready(function() {
         var mapBlockId = 'uni-geo-picker-map';
         var defaultCenterCoordinates = uniGeoPickerBlock.data('default-center-coordinates');
         var zoomLevel = uniGeoPickerBlock.data('zoom-level');
-        
+
         var map, placemark = false, mapInitCenterCoordinates, markCoordinates = false;
 
         ymaps.ready(function() {
@@ -95,4 +95,4 @@ $(document).ready(function() {
             placeMark.getOverlaySync().getData().geometry.setCoordinates(coordinates);
         }
     }
-});
+}
