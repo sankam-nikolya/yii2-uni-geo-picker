@@ -26,8 +26,6 @@ class UniGeoPickerAsset extends AssetBundle
     public function init()
     {
         $this->css[] = 'css/uni-geo-picker.css';
-
-        $this->js[] = 'https://api-maps.yandex.ru/2.1/?lang=' . Yii::$app->language;
         
         //TODO: Make min version of js and css
         //$this->js[] = YII_DEBUG ? 'js/uni-geo-picker.js' : 'js/uni-geo-picker.min.js';
