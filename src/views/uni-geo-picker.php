@@ -9,6 +9,7 @@
 use jakeroid\unigeopicker\UniGeoPickerAsset;
 use jakeroid\unigeopicker\YandexMapAsset;
 use yii\helpers\Html;
+use yii\web\View;
 
 /* @var $this yii\web\View */
 /* @var $form \yii\widgets\ActiveForm */
@@ -44,8 +45,4 @@ if (!Yii::$app->request->isPjax) {
     <?= Html::activeHiddenInput($model, $attribute, ['id' => 'uni-geo-picker-hidden-input']) ?>
 </div>
 
-<?php if (Yii::$app->request->isPjax): ?>
-<script>
-    uniGeoPickerAttachEvents();
-</script>
-<? endif; ?>
+<?php $this->registerJs("uniGeoPickerAttachEvents('#uni-geo-picker-widget');", View::POS_READY); ?>

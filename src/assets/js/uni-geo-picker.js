@@ -16,7 +16,7 @@ function uniGeoPickerAttachEvents(selector) {
         var defaultCenterCoordinates = uniGeoPickerBlock.data('default-center-coordinates');
         var zoomLevel = uniGeoPickerBlock.data('zoom-level');
 
-        var map, placemark = false, mapInitCenterCoordinates, markCoordinates = false;
+        var map, placemark = false, mapInitCenterCoordinates = false;
 
         ymaps.ready(function() {
 
@@ -24,7 +24,7 @@ function uniGeoPickerAttachEvents(selector) {
             if (!inputCoordinates || parseInt(inputCoordinates.replace(',', '')) == 0) {
                 mapInitCenterCoordinates = defaultCenterCoordinates.split(',');
             } else {
-                mapInitCenterCoordinates = markCoordinates = inputCoordinates.split(',');
+                mapInitCenterCoordinates = inputCoordinates.split(',');
             }
 
             map = new ymaps.Map(mapBlockId, {
@@ -60,8 +60,8 @@ function uniGeoPickerAttachEvents(selector) {
 
             map.controls.add(searchControl).add('zoomControl');
 
-            if (!markCoordinates) {
-                placemark = new ymaps.Placemark(markCoordinates, {}, { preset: "islands#dotCircleIcon", draggable: true });
+            if (mapInitCenterCoordinates) {
+                placemark = new ymaps.Placemark(mapInitCenterCoordinates, {}, { preset: "islands#dotCircleIcon", draggable: true });
                 map.geoObjects.add(placemark);
                 placemark.events.add("dragend", function (e) {
                     var coordinates = this.geometry.getCoordinates();
